@@ -16,15 +16,15 @@ def load_vectore_store():
             logger.info("Loading existing FAISS vector store")
             vector_store = FAISS.load_local(DB_FAISS_PATH, 
                                             embedding_model,
-                                              allow_dangerous_deserialization=True)
+                                            allow_dangerous_deserialization=True)
         else:
             logger.info("Creating new FAISS vector store")
             vector_store = FAISS.from_embeddings(embedding_model)
         return vector_store
     except Exception as e:
-        error_message = CustomException("Failed to load vector store")
+        error_message = CustomException("Failed to load vector store", e)
         logger.error(str(error_message))
-        return None
+        raise error_message
 
 # creating new vectorstore function 
 
@@ -33,13 +33,23 @@ def save_vector_store(text_chunks):
         if not text_chunks:
             raise CustomException("No text chunks provided")        
         logger.info("Generating your new vectorstore")
+        
+        # Get the embedding model
         embedding_model = get_embedding_model()
+        
+        # Create the FAISS vector store
         db = FAISS.from_documents(text_chunks, embedding_model)
         logger.info("Successfully generated FAISS vector store")
+        
+        # Ensure the directory exists
+        os.makedirs(os.path.dirname(DB_FAISS_PATH), exist_ok=True)
+        
+        # Save the vector store
         db.save_local(DB_FAISS_PATH)
         logger.info("Successfully saved FAISS vector store")
         return db
             
     except Exception as e:
-        error_message = CustomException("Failed to save vector store")
+        error_message = CustomException("Failed to save vector store", e)
         logger.error(str(error_message))
+        raise error_message

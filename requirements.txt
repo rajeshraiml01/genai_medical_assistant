@@ -6,3 +6,6 @@ pypdf
 huggingface_hub
 flask
 python-dotenv
+sentence-transformers
+torch
+transformers
