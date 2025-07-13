@@ -24,6 +24,12 @@ AgenticAIProjects/
 - 🔍 **Semantic Search**: Advanced similarity search for relevant medical information
 - 📊 **Comprehensive Logging**: Detailed monitoring and debugging capabilities
 
+### 🖥️ User Interface Preview
+
+![GenAI Medical Assistant UI](GenAIMedicalApp.png)
+
+*Modern, responsive web interface for seamless medical consultations*
+
 ### Quick Start:
 ```bash
 cd genai_medical_assistant
