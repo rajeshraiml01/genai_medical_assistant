@@ -48,14 +48,6 @@ Comprehensive testing and debugging utilities for the AI projects.
 - 📊 **Performance Testing**: Embedding and model performance benchmarks
 - 🛠️ **Diagnostic Scripts**: Automated issue detection and resolution
 
-### Available Scripts:
-- `test_complete_fix.py` - Full system validation
-- `diagnose_embedding.py` - Embedding model diagnostics
-- `setup_huggingface_auth.py` - Authentication setup
-- `fix_huggingface_auth.py` - Automatic auth repair
-
-**Detailed Documentation**: See [debugging/README.md](debugging/README.md)
-
 ---
 
 ## 🚀 Getting Started
@@ -76,13 +68,6 @@ cd AgenticAIProjects
 # 2. Create token with write permissions
 # 3. Add to .env file in each project
 ```
-
-### Project-Specific Setup
-Each project contains detailed setup instructions:
-- [Medical Assistant Quick Start](genai_medical_assistant/QUICKSTART.md)
-- [Configuration Guide](genai_medical_assistant/CONFIGURATION.md)
-- [Development Guide](genai_medical_assistant/DEVELOPMENT.md)
-
 ---
 
 ## 🏗️ Architecture Overview
@@ -118,48 +103,6 @@ Each project contains detailed setup instructions:
 - **Security**: bandit, safety
 - **Documentation**: Comprehensive README files
 
-### Git Workflow
-```bash
-# Feature development
-git checkout -b feature/new-capability
-# ... develop and test ...
-git commit -m "feat(component): description"
-git push origin feature/new-capability
-# Create pull request
-```
-
-### Testing Strategy
-```bash
-# Run comprehensive tests
-python debugging/test_complete_fix.py
-
-# Run specific component tests
-python debugging/test_embedding_fix.py
-
-# Performance benchmarking
-python debugging/diagnose_embedding.py
-```
-
----
-
-## 📊 Project Status & Roadmap
-
-### Current Status: ✅ Production Ready
-- [x] Core RAG implementation
-- [x] Multi-model fallback system
-- [x] Web interface
-- [x] Comprehensive testing
-- [x] Documentation
-- [x] Error handling & logging
-
-### Upcoming Features: 🚧 In Development
-- [ ] REST API endpoints
-- [ ] Advanced authentication
-- [ ] Multi-language support
-- [ ] Medical specialty models
-- [ ] Cloud deployment guides
-- [ ] Performance monitoring dashboard
-
 ### Future Enhancements: 💡 Planned
 - [ ] Voice interface integration
 - [ ] Mobile application
@@ -182,45 +125,6 @@ python debugging/diagnose_embedding.py
 - **Language Model**: GPT-2 with medical fine-tuning capabilities
 - **Vector Search**: FAISS with exact similarity search
 - **Memory Usage**: < 2GB RAM for standard operation
-
----
-
-## 🛡️ Security & Privacy
-
-### Security Features
-- **Input Validation**: Comprehensive sanitization
-- **Error Handling**: Secure error messages
-- **Token Management**: Environment-based secret handling
-- **Session Security**: Secure session management
-
-### Privacy Considerations
-- **Data Handling**: Local processing, no data transmission
-- **Model Privacy**: Uses open-source models
-- **Conversation Privacy**: Session-based, not persistent
-- **Compliance Ready**: Structured for HIPAA compliance
-
----
-
-## 📚 Documentation Index
-
-### Quick Start Guides
-- [Medical Assistant Quick Start](genai_medical_assistant/QUICKSTART.md)
-- [System Requirements](genai_medical_assistant/README.md#prerequisites)
-
-### Configuration & Setup
-- [Configuration Guide](genai_medical_assistant/CONFIGURATION.md)
-- [Environment Variables](genai_medical_assistant/CONFIGURATION.md#environment-variables)
-- [Model Configuration](genai_medical_assistant/CONFIGURATION.md#model-configuration)
-
-### Development Resources
-- [Development Guide](genai_medical_assistant/DEVELOPMENT.md)
-- [Architecture Documentation](genai_medical_assistant/app/README.md)
-- [Component Documentation](genai_medical_assistant/app/components/README.md)
-
-### Testing & Debugging
-- [Debugging Guide](debugging/README.md)
-- [Testing Framework](genai_medical_assistant/DEVELOPMENT.md#testing-framework)
-- [Performance Tuning](genai_medical_assistant/CONFIGURATION.md#performance-tuning)
 
 ---
 
@@ -254,19 +158,6 @@ pre-commit install
 ```
 
 ---
-
-## 📞 Support & Contact
-
-### Getting Help
-- **Documentation**: Comprehensive guides in each project folder
-- **Issues**: GitHub issues for bug reports and feature requests
-- **Discussions**: GitHub discussions for questions and ideas
-
-### Project Maintainer
-- **Author**: Rajesh R
-- **Email**: Available in project configuration
-- **HuggingFace**: Integration with HF ecosystem
-
 ### Resources
 - [HuggingFace Documentation](https://huggingface.co/docs)
 - [LangChain Documentation](https://docs.langchain.com/)
@@ -274,11 +165,6 @@ pre-commit install
 - [Flask Documentation](https://flask.palletsprojects.com/)
 
 ---
-
-## 📄 License
-
-This project is licensed under the MIT License - see individual project LICENSE files for details.
-
 ---
 
 ## 🙏 Acknowledgments
@@ -289,5 +175,3 @@ This project is licensed under the MIT License - see individual project LICENSE 
 - **Open Source Community**: For tools and libraries that make this possible
 
 ---
-
-**🚀 Ready to explore the future of Agentic AI? Start with the [Medical Assistant Quick Start Guide](genai_medical_assistant/QUICKSTART.md)!**
