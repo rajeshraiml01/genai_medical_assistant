@@ -38,11 +38,13 @@ def _get_hf_with_token():
     if not HF_TOKEN:
         raise Exception("No HuggingFace token available")
     
+    # Set the token as an environment variable
+    os.environ["HUGGINGFACEHUB_API_TOKEN"] = HF_TOKEN
+    
     model = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2",
         model_kwargs={'device': 'cpu'},
-        encode_kwargs={'normalize_embeddings': True},
-        huggingfacehub_api_token=HF_TOKEN
+        encode_kwargs={'normalize_embeddings': True}
     )
     return model
 

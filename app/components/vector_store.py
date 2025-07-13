@@ -9,7 +9,7 @@ from app.config.config import DB_FAISS_PATH
 
 logger = get_logger(__name__)
 
-def load_vectore_store():
+def load_vector_store():
     try:
         embedding_model = get_embedding_model()
         if os.path.exists(DB_FAISS_PATH):
@@ -17,10 +17,10 @@ def load_vectore_store():
             vector_store = FAISS.load_local(DB_FAISS_PATH, 
                                             embedding_model,
                                             allow_dangerous_deserialization=True)
+            return vector_store
         else:
-            logger.info("Creating new FAISS vector store")
-            vector_store = FAISS.from_embeddings(embedding_model)
-        return vector_store
+            logger.warning("FAISS vector store does not exist. Please run initialization first.")
+            return None
     except Exception as e:
         error_message = CustomException("Failed to load vector store", e)
         logger.error(str(error_message))

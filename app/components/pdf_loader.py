@@ -46,3 +46,30 @@ def create_text_chunks(documents):
         error_message = CustomException("Failed to Generate Chunks")
         logger.error(str(error_message))
         return []
+
+def load_pdf_data(pdf_file_path):
+    """Load and process a specific PDF file"""
+    try:
+        if not os.path.exists(pdf_file_path):
+            raise CustomException(f"PDF file not found: {pdf_file_path}")
+        
+        logger.info(f"Loading PDF file: {pdf_file_path}")
+        
+        # Load the specific PDF file
+        loader = PyPDFLoader(pdf_file_path)
+        documents = loader.load()
+        
+        if not documents:
+            raise CustomException("No content extracted from PDF")
+        
+        logger.info(f"Successfully loaded {len(documents)} pages from PDF")
+        
+        # Split documents into chunks
+        text_chunks = create_text_chunks(documents)
+        
+        return text_chunks
+        
+    except Exception as e:
+        error_message = CustomException(f"Failed to load PDF data: {str(e)}")
+        logger.error(str(error_message))
+        return []
